@@ -232,7 +232,9 @@ func release(source string, destination string) error {
 }
 
 func setActionOutput(name string, content string) {
-	os.Stdout.WriteString("::set-output name=" + name + "::" + content + "\n")
+	//"{name}={value}" >> $GITHUB_OUTPUT
+	os.Stdout.WriteString("{" + name + "}={" content + "} >> $GITHUB_OUTPUT")
+	//os.Stdout.WriteString("::set-output name=" + name + "::" + content + "\n")
 }
 
 func main() {
