@@ -36,7 +36,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.build.outputs.tag }}
-          release_name: ${{ steps.build.outputs.tag }}
+          release_name: ${{ steps.build.outputs.release }}
           draft: false
           prerelease: false
       - name: Release geoip.db
