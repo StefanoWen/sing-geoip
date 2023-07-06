@@ -227,7 +227,9 @@ func release(source string, destination string) error {
 	if err != nil {
 		return err
 	}
-	setActionOutput("tag", *sourceRelease.Name)
+	setActionOutput("tag", strings.Replace(*sourceRelease.Name, "Released on ", "", 1))
+	setActionOutput("release", *sourceRelease.Name)
+
 	return nil
 }
 
