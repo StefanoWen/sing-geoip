@@ -9,7 +9,6 @@ import (
 	"sort"
 	"strings"
 	"time"
-	"fmt"
 
 	"github.com/sagernet/sing/common"
 	E "github.com/sagernet/sing/common/exceptions"
