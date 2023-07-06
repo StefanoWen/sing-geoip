@@ -8,6 +8,8 @@ import (
 	"os"
 	"sort"
 	"strings"
+	"time"
+	"fmt"
 
 	"github.com/sagernet/sing/common"
 	E "github.com/sagernet/sing/common/exceptions"
@@ -227,8 +229,10 @@ func release(source string, destination string) error {
 	if err != nil {
 		return err
 	}
-	setActionOutput("tag", strings.Replace(*sourceRelease.Name, "Released on ", "", 1))
-	setActionOutput("release", *sourceRelease.Name)
+	t := time.Now()
+	formattedTime := t.Format("200601021504")
+	setActionOutput("tag", formattedTime)
+	setActionOutput("release", "Released On" + formattedTime)
 
 	return nil
 }
