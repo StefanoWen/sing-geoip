@@ -231,7 +231,7 @@ func release(source string, destination string) error {
 	t := time.Now()
 	formattedTime := t.Format("200601021504")
 	setActionOutput("tag", formattedTime)
-	setActionOutput("release", "Released On" + formattedTime)
+	setActionOutput("release", "Released On " + formattedTime)
 
 	return nil
 }
