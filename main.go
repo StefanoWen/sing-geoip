@@ -235,7 +235,8 @@ func release(source string, destination string) error {
 
 func setActionOutput(name string, content string) {
 	//"{name}={value}" >> $GITHUB_OUTPUT
-	os.Stdout.WriteString("{" + name + "}={" + content + "} >> $GITHUB_OUTPUT")
+	os.Stdout.WriteString(content)
+	os.Stdout.WriteString("{" + name + "}={" + content + "} >> $GITHUB_OUTPUT\n")
 	//os.Stdout.WriteString("::set-output name=" + name + "::" + content + "\n")
 }
 
